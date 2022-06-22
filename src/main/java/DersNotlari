@@ -1,0 +1,323 @@
+public class Day02MethodCreation {
+
+    public static void main(String[] args) {
+
+        System.out.println(addIntegers(12, 5));
+        System.out.println(multiplyIntegers(8,5));
+        System.out.println(subtractIntegers(12, 7));
+        System.out.println(divideIntegers(24.6, 2));
+
+    }
+
+    //Create an addition method
+    public static int addIntegers(int a, int b){
+        return a + b;
+    }
+    //Create a multiplication method
+    public static int multiplyIntegers(int a, int b){
+        return a*b;
+    }
+    //Create a subtraction method
+    public static int subtractIntegers(int a, int b){
+        return a - b;
+    }
+    //Create a dynamic division method
+    public static double divideIntegers(double a, int b) {
+        return a / b;
+    }
+
+    //Note 1: If you use same data types for all values in a mathematical operation, the result
+    //        will be in the same data type
+
+    //Note 2: If you use different data types in a mathematical operation, the result
+    //        will be in the largest data type. Example; double / int ==>> double
+
+    /*
+        What did we learn so far?
+        1)How to create dynamic methods.
+        2)How to use a method in "main method"
+        3)How to print the result of the method on the console.
+        4)How to decide return type when you create a method.
+        5)How to work data types in mathematical operation
+     */
+
+
+
+public class Day02Variables {
+
+    public static void main(String[] args) {
+
+        System.out.println(age);
+        System.out.println(height);
+        System.out.println(weight);
+
+        //If you create a variable inside the "main method", Java will accept them as "static" automatically
+
+        //Create a char variable
+        //Do not forget to putt the value between single quotes
+        //Default value of char is the character whose value is zero
+        char initial = 'S';
+
+        //Create a boolean variable
+        //Default value of boolean is false
+        boolean isOld = true;
+        boolean isAlive = false;
+
+        //Create a byte variable
+        byte ageOfStd = 13;
+
+        //Create a short variable
+        short populationOfVillage = 21000;
+
+        //Create a long variable
+        //Do not forget to put L to the end when you create a long variable
+        long populationOfWorld = 7123456789L;
+
+    }
+
+    //How to create a variable
+    // Data Type - Variable Name - Equal Sign - Value - Semi Colon
+    static int age = 12;
+
+    //Create an integer variable
+    static int height = 183;
+    //Create a double variable
+    public static double weight = 85.7;
+
+    //Note: If you do not type any access modifier, it means the access modifier is "default"
+
+    /*
+                Data Types in Java
+        1)Primitive Data Types:
+             i)Those data types were created by Java, we cannot create any primitive data type
+             ii)Primitive data types are 8
+                a)byte - short - int - long - float - double / char - boolean
+                    char: It is for single characters like A, h, ?, !, etc.
+                    boolean: It is for true-false values
+
+                    byte: It is used for the values from -128 to 127. It is for whole numbers
+                    short: It is used for the values from -32 thousand sth to positive 32 thousand sth. It is for whole numbers
+                    int: It is used for the values from -2 billion sth to 2 billion sth. It is for whole numbers
+                    long: It is used for the values from .... to ..... It is for whole numbers
+
+                    float:It is used for decimals. float uses memory less than double.
+                          When you create float as data type you have to put 'F' or 'f' at the end
+                          float has 7 digits at most in decimal part.
+                    double:It is used for decimals. double is used for scientific researches
+                           double has 16 digits at most in decimal part.
+
+        2)Non-Primitive Data Types
+            i)Those data types can be created by Java and by Java Developers
+            String is a non-primitive data type
+            String data type is used for multiple characters
+
+       Note: What is the difference between "primitive" and "non-primitive" data types?
+       Answer: There are 4 main differences;
+                i) "primitive" data types start with lower cases, "non-primitive" data types start with upper cases
+                ii) "primitive" data types can be created just by Java not by developers, "non-primitive" data types can be created by Java and by Java developers
+                iii) "primitive" data types use different size of memory but "non-primitive" data types use memory same
+
+                iv) "primitive" data types have just values in it but "non-primitive" data types have 'values' and 'methods' in it.
+     */
+
+    String nameOfStd = "Mark Twain";
+    String stdId = "Mt2022_01";
+}
+12:58
+        Day03DataTypes
+
+
+        Suleyman Alptekin  2:31 AM
+public class Day03DataTypes {
+
+    /*
+            Type Casting: Converting number primitive data type to another number primitive data type
+                byte  -  short  -  int  -  long  -  float  -  double
+                Note 1: If you convert small data type to large data type, it is called "Auto Widening"
+                Note 2: If you convert large data type to small data type, it is called "Explicit Narrowing"
+
+            Wrapper Class: Wrapper Classes are classes for primitive number data types
+               byte --> Byte
+               short --> Short
+               ** int --> Integer
+               long --> Long
+               float --> Float
+               double --> Double
+               ** char --> Character
+               boolean --> Boolean
+
+           Memory Usage in Java
+              There are 2 types of memories in Java
+              1)Stack Memory ==> Small
+              2)Heap Memory ==> Huge
+
+     */
+
+    public static void main(String[] args) {
+
+        //Auto Widening
+        byte age = 12;
+        int myAge = age;
+
+        short populationOfAVillage = 21000;
+        double myPopulationOfAVillage = populationOfAVillage;
+
+        //Explicit Narrowing
+        double x = 23.45;
+        long y = (long)x;
+
+        String name = "Mark Twain";
+
+        System.out.println(name.toUpperCase());//MARK TWAIN
+        System.out.println(name.toLowerCase()); //mark twain
+        //Find the number of characters in name String variable
+        System.out.println(name.length()-1);//9
+
+        //Wrapper classes
+        Byte yourAge = 13;
+        Boolean isOld = true;
+
+        //If a method is static, you can access to the method by using class name
+        System.out.println(Byte.MIN_VALUE);//-128
+        System.out.println(Integer.MIN_VALUE);// -2147483648
+        System.out.println(Float.MIN_VALUE);//1.4E-45
+
+        System.out.println(Long.MAX_VALUE);// 9223372036854775807
+        System.out.println(Double.MAX_VALUE);//1.7976931348623157E308
+
+        //Auto Boxing is done by Java automatically
+        int a = 12;
+        Integer b = a;
+
+        //Un-Boxing is done by Java automatically
+        int c = b;
+
+    }
+
+
+
+}
+
+import java.util.Scanner;
+
+public class Day05ModulusConcatenationIf {
+
+    /*
+        Modulus Operator: % is called 'modulus operator' in Java
+                         It returns the remainder in a division operation
+                         13 / 5 ==> Modulus operator gives you 3
+                         13 % 5 ==> 3
+     */
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter an integer...");
+        int n = input.nextInt();
+
+        int absN = Math.abs(n);
+
+        //Ask user to enter an integer the print the last digit of the integer on the console
+        int lastDigit = absN % 10;
+        System.out.println(lastDigit);
+
+        //Ask user to enter his birth year, then print just last 2 digits on the console
+        int lastTwoDigits = absN % 100;
+        System.out.println(lastTwoDigits);
+
+        //Ask user to enter an integer then check if the number is even
+        System.out.println("Is the number even? " + (absN % 2 == 0));
+
+        //Ask user to enter an integer then check if the number is odd
+        System.out.println("Is the number odd? " + (absN % 2 != 0));
+
+        //Ask user to enter a 3 digits integer the find the sum of the digits
+        int last = absN % 10;
+
+        absN = absN / 10;
+        int second = absN % 10;
+
+        absN = absN / 10;
+        int first = absN % 10;
+
+        System.out.println(last + second + first);
+    }
+}
+public class Day05ConcatenationIf {
+
+    /*
+        Concatenation: Joining Strings with each other or with other data types
+                       To do concatenation we have 2 options;
+                       1)Use '+' sign
+                       2)Use 'concat()' method
+     */
+
+    public static void main(String[] args) {
+
+        String s = "Tom";
+        String t = "Hanks";
+        int i = 12;
+        int k = 5;
+        char c = 'A';
+
+        System.out.println(s + " " + t);//Tom Hanks
+
+        System.out.println(s + i + k);//Tom125
+
+        System.out.println(s + (i + k));//Tom17
+
+        System.out.println(i + k + s);//17Tom
+
+        System.out.println(i + s + k);//12Tom7
+
+        System.out.println(s + k*i);//Tom60
+
+    }
+
+}
+
+
+rabia sahan  2:11 AM
+77Tom
+
+
+Suleyman Alptekin  2:21 AM
+public class Day05ConcatenationIf {
+
+    /*
+        Concatenation: Joining Strings with each other or with other data types
+                       To do concatenation we have 2 options;
+                       1)Use '+' sign ==> Can be used with all data types
+                       2)Use 'concat()' method ==> Inside the concat() method parenthesis you can put just String not the other
+     */
+
+    public static void main(String[] args) {
+
+        String s = "Tom";
+        String t = "Hanks";
+        int i = 12;
+        int k = 5;
+        char c = 'A';
+
+        System.out.println(s + " " + t);//Tom Hanks
+        System.out.println(s.concat(" ").concat(t));//Tom Hanks
+
+        System.out.println(s + i + k);//Tom125
+
+        System.out.println(s + (i + k));//Tom17
+
+        System.out.println(i + k + s);//17Tom
+
+        System.out.println(i + s + k);//12Tom7
+
+        System.out.println(s + k*i);//Tom60
+
+        System.out.println(i + c + s);//77Tom
+
+        System.out.println(c + s + k);//Atom5
+
+    }
+
+}
+2:22
+Day05IfStatement
