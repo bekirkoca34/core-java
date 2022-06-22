@@ -4,6 +4,7 @@ public class JavaRev01 {
 
         System.out.println(" today, I am planning to revise to array list in Java");
         System.out.println("second version was updated");
-
+        System.out.println("this class was created beko");
+        System.out.println("today, I will add some new codes, also.");
     }
 }
